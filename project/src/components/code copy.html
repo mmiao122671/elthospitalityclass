@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Program Overview - ELT Hospitality</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&amp;family=Lexend:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#900a1d",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#c0bebd",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "secondary-container": "#fd7274",
+                        "surface-dim": "#dadada",
+                        "secondary-fixed-dim": "#ffb3b1",
+                        "on-secondary-fixed-variant": "#891b25",
+                        "secondary-fixed": "#ffdad8",
+                        "tertiary": "#363636",
+                        "inverse-surface": "#2f3131",
+                        "outline-variant": "#e1bebd",
+                        "tertiary-container": "#4d4d4d",
+                        "outline": "#8d706f",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#ffa6a3",
+                        "inverse-primary": "#ffb3b0",
+                        "primary-container": "#991322",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f9f9f9",
+                        "on-surface-variant": "#594140",
+                        "on-background": "#1a1c1c",
+                        "primary": "#730013",
+                        "primary-fixed": "#ffdad8",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-secondary-container": "#6f0416",
+                        "primary-fixed-dim": "#ffb3b0",
+                        "on-secondary-fixed": "#410008",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed": "#410006",
+                        "on-error": "#ffffff",
+                        "background": "#f9f9f9",
+                        "secondary": "#a9343b",
+                        "surface-tint": "#b22831",
+                        "surface-container-low": "#f3f3f3",
+                        "on-surface": "#1a1c1c",
+                        "tertiary-fixed": "#e4e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "body-md": ["Lexend"],
+                        "body-lg": ["Lexend"],
+                        "headline-md": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<header class="bg-white dark:bg-zinc-950 font-['Public_Sans'] antialiased tracking-tight docked full-width top-0 sticky z-50 border-b border-zinc-200 dark:border-zinc-800 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-6 h-20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#991322] dark:text-red-500 text-3xl" data-icon="school">school</span>
+<span class="text-xl font-bold text-[#991322] dark:text-red-500 uppercase tracking-wide">ELT Hospitality</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#991322] dark:text-red-500 font-bold border-b-2 border-[#991322] pb-1" href="#">Program Details</a>
+<a class="text-zinc-600 dark:text-zinc-400 font-medium hover:text-[#991322] transition-colors" href="#">Certifications</a>
+<a class="text-zinc-600 dark:text-zinc-400 font-medium hover:text-[#991322] transition-colors" href="#">Admissions</a>
+</nav>
+<button class="bg-[#991322] text-white px-6 py-3 rounded-lg font-label-caps active:scale-95 transform transition-transform hover:bg-[#730013]">
+            Apply Now
+        </button>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6 py-12">
+<section class="mb-stack-lg">
+<div class="relative rounded-xl overflow-hidden min-h-[400px] flex items-center mb-stack-md bg-primary-container">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-30 mix-blend-overlay" data-alt="diverse group of hospitality students in professional uniforms practicing service skills in a bright modern hotel lobby setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIHRfJaaNO2adPWMw7hJ1lBluJstd46sx6XHrZa487hou0LObcPez8AyZJmWCcEcKnGRAsmh4TUjrmsl11WTEDvEK0mgy8lTdL8IId4cSL77ACENqswwXNqAC8g0ziJT0MZhMMppCwyZtw9fjOQvTAuMZy3fnuDFwrTXDnfhBbL6R8G9esKct4Hq3YXaKELFPMOM5sHMy4bDxqF5vxVMxps36vvvKcdnf5-UdGH1ZND250f8CX21fS2Fti8bI8kS0PLdP-YHAhjA"/>
+</div>
+<div class="relative z-10 p-12 max-w-2xl">
+<h1 class="font-headline-lg text-headline-lg text-on-primary mb-4">Program Overview &amp; Objectives</h1>
+<p class="font-body-lg text-body-lg text-on-primary opacity-90">Building your career in Canada's hospitality sector through hands-on learning and real-world practice.</p>
+</div>
+</div>
+</section>
+<section class="mb-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-12 lg:col-span-4 bg-white p-8 rounded-xl border border-zinc-200 flex flex-col justify-center">
+<div class="mb-6">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="handshake">handshake</span>
+<h2 class="font-headline-md text-headline-md mb-4 text-on-surface">The Experience</h2>
+<p class="font-body-md text-body-md text-tertiary">Our program is defined by its hands-on nature. We believe learning by doing is the fastest way to gain confidence in your new professional environment.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-label-caps">Practical Training</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-label-caps">Workplace Readiness</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-12 lg:col-span-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-white rounded-xl border border-zinc-200 overflow-hidden hover:shadow-md transition-shadow group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="modern retail store interior with clean displays and organized merchandise highlighting friendly customer service environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-io9brU_-FyAzl4UCUY275AegSy_m3W_lrg8a7B5sqX9DHH9AgpLcq19OK7Ibp94gk-LK1KaNjpUnjA1XtMGIeClBDIvYDrd9aDN89UYS4UK28nUqyNQnPdZPc5Xy9Qd2fO-VYLnKojsRj3_5fbtqyB_l2zVHYAfBDdnki2aQ4zHDGi1Xuu6525e4o7PCznA3DHDEMj45iVMWlm9_KHjCjQcKpEklG7BlUWn0ucQKI9cgOjj0bv3AeeTHG-AUKhAZG41QACUzgg"/>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary" data-icon="storefront">storefront</span>
+<h3 class="font-headline-md text-xl">Customer Service</h3>
+</div>
+<p class="font-body-md text-zinc-600 mb-4">Practice your interaction skills at the <strong>New-to-You Shop</strong>, learning point-of-sale systems and Canadian retail etiquette.</p>
+<span class="text-primary font-label-caps flex items-center gap-1 group-hover:gap-2 transition-all">Explore Retail Module <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></span>
+</div>
+</div>
+<div class="bg-white rounded-xl border border-zinc-200 overflow-hidden hover:shadow-md transition-shadow group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="professional industrial kitchen with chefs preparing healthy meals with fresh ingredients for a school lunch program" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH9DctVoLstulJksz811Yk-RDB3nQmY3Z1Cha7esG9j2cJijNem8GkeqBTJVia8QLBCSbQD-6WKHACRoSgCJJqGGqvwGsD4h3i8lhTiZVSZyWDHdcHZZXeqtTzLvwqQKIc7OvXuNEEWpuzgJ9l6kubOXefrztqWGYgBrqsvtA-1VgRzWszUJBt6fFk2YZjEvxt_OFTmvkt3tEmweHbqlZ6J6MWZucX4xfvDeliFWKSoCfvX6yMmiN4Pw9ItTLEGGAncxvJim3BiA"/>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant">restaurant</span>
+<h3 class="font-headline-md text-xl">Culinary Arts</h3>
+</div>
+<p class="font-body-md text-zinc-600 mb-4">Master cooking and serving through our <strong>School Lunch Program</strong>. Gain real commercial kitchen experience every day.</p>
+<span class="text-primary font-label-caps flex items-center gap-1 group-hover:gap-2 transition-all">Explore Kitchen Module <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></span>
+</div>
+</div>
+<div class="bg-white rounded-xl border border-zinc-200 overflow-hidden hover:shadow-md transition-shadow group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="colorful festive event decor for a winter carnival with people gathering and smiling in a well-lit community hall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR0lkpP2IH37vivyo56ks5v_8tGdm0jb-ZzRd1EPjDgKXQThvLLmgabGL_giStzSV5Oe-lylN77MYzjcjD-OQsgfcUO2xa-rOmR__n1y_Xqrg_bD6EHRjx_ZrVCcVcFUUaVCFN9UgCbNqzXvJNm33Tgm9vjcYYEjKDMViArIE77GwnxIMDO14Y7VfbXMZhSdUbP0_sb7MFQqAsjDTBQPI-QtzLbigK5xH4Qhct388h4WPITD9ikLydicXaibgPikPVvBupLM2cgQ"/>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary" data-icon="event">event</span>
+<h3 class="font-headline-md text-xl">Event Planning</h3>
+</div>
+<p class="font-body-md text-zinc-600 mb-4">From the <strong>Winter Carnival</strong> to our <strong>Haunted House</strong>, learn the logistics and magic of hosting large community events.</p>
+<span class="text-primary font-label-caps flex items-center gap-1 group-hover:gap-2 transition-all">Explore Events Module <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></span>
+</div>
+</div>
+<div class="bg-white rounded-xl border border-zinc-200 overflow-hidden hover:shadow-md transition-shadow group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="scenic view of Prince Edward Island coastline with red cliffs and a lighthouse under a clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLNhLLl8F6q1i8kvM4feIsHfE7I9wxIPoYcQXAJuqrkSnDx8UXKfvRRqsXvo13HMxjLmSZlV1ownbj7WJvb_NbJXNOyvZgpnad2DLCuKJgbPJ7Q4IBVSUQeWaGYsgLEeXm0Zrw3vVAXMUEO8HQUzUkhnsBWA_CLWDTM41TlwtA07KQwYJSQ6VEreQnCtvm_mO-VNwkl7bxgrRKa_y2cKX6L4IACQCUnxbi-u8pTFdRNTDiYq--9cRSmKj8s0NTin32KQsfG-0IRw"/>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary" data-icon="map">map</span>
+<h3 class="font-headline-md text-xl">Tourism Knowledge</h3>
+</div>
+<p class="font-body-md text-zinc-600 mb-4">Become an island expert with <strong>PEI-specific training</strong> and educational <strong>bus tours</strong> across the province.</p>
+<span class="text-primary font-label-caps flex items-center gap-1 group-hover:gap-2 transition-all">Explore Tourism Module <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-stack-lg p-12 bg-zinc-100 rounded-2xl border border-zinc-200 text-center">
+<h2 class="font-headline-md text-headline-md mb-4">Ready to start your journey?</h2>
+<p class="font-body-lg text-zinc-600 max-w-2xl mx-auto mb-8">Join a community of international learners and gain the skills needed for Prince Edward Island's growing hospitality industry.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-[#991322] text-white px-8 py-4 rounded-lg font-label-caps hover:bg-[#730013] transition-colors">Apply for Next Intake</button>
+<button class="border border-[#262626] text-[#262626] px-8 py-4 rounded-lg font-label-caps hover:bg-zinc-200 transition-colors">Download Program Guide</button>
+</div>
+</section>
+</main>
+<footer class="bg-zinc-100 dark:bg-zinc-900 font-['Public_Sans'] text-sm leading-relaxed full-width mt-16 border-t border-zinc-200 dark:border-zinc-800">
+<div class="max-w-[1200px] mx-auto px-6 py-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left mb-12">
+<div>
+<h4 class="font-bold text-[#991322] dark:text-red-500 text-lg mb-4">Contact Us</h4>
+<div class="text-zinc-600 dark:text-zinc-400 space-y-1">
+<p>34 Belmont Street</p>
+<p>Charlottetown, PE C1A 5H1</p>
+<p>Phone: (902) 628-7014</p>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-[#991322] dark:text-red-500 text-lg mb-4">Quick Links</h4>
+<div class="flex flex-col gap-2">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#991322] dark:hover:text-red-400 transition-colors" href="#">About Program</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#991322] dark:hover:text-red-400 transition-colors" href="#">Curriculum</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#991322] dark:hover:text-red-400 transition-colors" href="#">How to Apply</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-[#991322] dark:text-red-500 text-lg mb-4">Connect With Us</h4>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#991322] dark:hover:text-red-400 transition-colors flex items-center gap-2" href="#">
+                    Follow us on Facebook
+                </a>
+</div>
+</div>
+<div class="border-t border-zinc-200 dark:border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-bold text-[#991322]">ELT HOSPITALITY</span>
+<p class="text-zinc-500 dark:text-zinc-400 text-xs">© 2024 Holland College ELT Hospitality Program. Funded by IRCC.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-4 text-xs">
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-[#991322] underline transition-all" href="#">Privacy Policy</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-[#991322] underline transition-all" href="#">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELT Hospitality - Holland College</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&amp;family=Lexend:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#900a1d",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#c0bebd",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "secondary-container": "#fd7274",
+                        "surface-dim": "#dadada",
+                        "secondary-fixed-dim": "#ffb3b1",
+                        "on-secondary-fixed-variant": "#891b25",
+                        "secondary-fixed": "#ffdad8",
+                        "tertiary": "#363636",
+                        "inverse-surface": "#2f3131",
+                        "outline-variant": "#e1bebd",
+                        "tertiary-container": "#4d4d4d",
+                        "outline": "#8d706f",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#ffa6a3",
+                        "inverse-primary": "#ffb3b0",
+                        "primary-container": "#991322",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f9f9f9",
+                        "on-surface-variant": "#594140",
+                        "on-background": "#1a1c1c",
+                        "primary": "#730013",
+                        "primary-fixed": "#ffdad8",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-secondary-container": "#6f0416",
+                        "primary-fixed-dim": "#ffb3b0",
+                        "on-secondary-fixed": "#410008",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed": "#410006",
+                        "on-error": "#ffffff",
+                        "background": "#f9f9f9",
+                        "secondary": "#a9343b",
+                        "surface-tint": "#b22831",
+                        "surface-container-low": "#f3f3f3",
+                        "on-surface": "#1a1c1c",
+                        "tertiary-fixed": "#e4e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "body-md": ["Lexend"],
+                        "body-lg": ["Lexend"],
+                        "headline-md": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9f9;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-zinc-950 docked full-width top-0 sticky z-50 border-b border-zinc-200 dark:border-zinc-800 shadow-sm dark:shadow-none h-20">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-6 h-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#991322] dark:text-red-500 text-2xl" data-icon="school">school</span>
+<span class="text-xl font-bold text-[#991322] dark:text-red-500 uppercase tracking-wide font-['Public_Sans']">ELT Hospitality</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-[#991322] dark:text-red-500 font-bold border-b-2 border-[#991322] pb-1 font-label-caps text-label-caps" href="#">Home</a>
+<a class="text-zinc-600 dark:text-zinc-400 font-medium hover:text-[#991322] transition-colors font-label-caps text-label-caps" href="#">Program Details</a>
+<a class="text-zinc-600 dark:text-zinc-400 font-medium hover:text-[#991322] transition-colors font-label-caps text-label-caps" href="#">Certifications</a>
+</nav>
+<button class="bg-[#991322] text-white px-6 py-3 rounded-lg font-bold active:scale-95 transform transition-transform hover:bg-[#730013]">
+                Apply Now
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hospitality Career PEI" class="w-full h-full object-cover" data-alt="Modern professional hotel reception with warm ambient lighting and friendly staff assisting international guests in a bright lobby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClBWZoe4iXH8KVe7NlOguTnPOCG141wA2l6EkvBaUG_ASMvxWExhvHFX0CV3wzhv8mZXvs35lABQGsUcZiCj5wo-RFiErSXg4OeGAwoMHedvR-FK5bqITo1JDwIYBVyCr0sUpPqYcXEp_JnzUIotlGTFxMxvYiICXdzFTN79svc0wx255orXvbjJLS-oHpd-l7ACAhexyKTirjWDEPTElP9z18TMxM0cZT_xnwFCe2aKVDWSdmpNmKtJhuzLLAyRnZmSDuyupbuw"/>
+<div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+</div>
+<div class="container max-w-[1200px] mx-auto px-6 relative z-10">
+<div class="max-w-2xl">
+<span class="inline-block bg-primary-container text-on-primary font-label-caps text-label-caps px-4 py-1 rounded-full mb-6 uppercase tracking-widest">Holland College</span>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-6 leading-tight">Launch Your Hospitality Career in PEI</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">
+                        Bridge the gap between your international background and the Canadian hospitality industry. Gain hands-on training, industry certifications, and English language excellence.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition-all active:scale-95">
+                            Book Your Interview
+                        </button>
+<button class="border-2 border-tertiary text-tertiary hover:bg-tertiary hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition-all">
+                            View Curriculum
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Summary & Bento Layout -->
+<section class="py-20 bg-surface">
+<div class="container max-w-[1200px] mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Eligibility Badges Bento Item -->
+<div class="md:col-span-8 bg-white p-8 rounded-xl border border-zinc-200 shadow-sm flex flex-col justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Program Eligibility</h2>
+<p class="text-on-surface-variant mb-8">This IRCC-funded program is specifically designed for newcomers to Canada.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="bg-primary-fixed w-12 h-12 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="translate">translate</span>
+</div>
+<div>
+<p class="font-bold text-on-primary-fixed-variant">CLB 5-8</p>
+<p class="text-sm text-on-surface-variant">English Proficiency</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="bg-primary-fixed w-12 h-12 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="id_card">id_card</span>
+</div>
+<div>
+<p class="font-bold text-on-primary-fixed-variant">Permanent Resident</p>
+<p class="text-sm text-on-surface-variant">Or Refugee Status</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Dates Bento Item -->
+<div class="md:col-span-4 bg-primary text-white p-8 rounded-xl shadow-lg relative overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="calendar_month">calendar_month</span>
+<h3 class="font-headline-md text-headline-md mb-2">2026-27 Cohort</h3>
+<div class="space-y-4 mt-6">
+<div class="border-l-2 border-on-primary-container pl-4">
+<p class="text-sm opacity-80 uppercase tracking-widest font-label-caps">Starts</p>
+<p class="font-bold text-xl">September 2026</p>
+</div>
+<div class="border-l-2 border-on-primary-container pl-4">
+<p class="text-sm opacity-80 uppercase tracking-widest font-label-caps">Graduation</p>
+<p class="font-bold text-xl">June 2027</p>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="pending_actions">pending_actions</span>
+</div>
+</div>
+<!-- Small Feature Cards -->
+<div class="md:col-span-4 bg-white p-6 rounded-xl border border-zinc-200 shadow-sm">
+<div class="text-secondary mb-4">
+<span class="material-symbols-outlined text-3xl" data-icon="restaurant">restaurant</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Culinary Excellence</h4>
+<p class="text-sm text-on-surface-variant">Master back-of-house operations in professional commercial kitchens.</p>
+</div>
+<div class="md:col-span-4 bg-white p-6 rounded-xl border border-zinc-200 shadow-sm">
+<div class="text-secondary mb-4">
+<span class="material-symbols-outlined text-3xl" data-icon="hotel">hotel</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Hotel Management</h4>
+<p class="text-sm text-on-surface-variant">Front desk operations, guest services, and tourism fundamentals.</p>
+</div>
+<div class="md:col-span-4 bg-white p-6 rounded-xl border border-zinc-200 shadow-sm">
+<div class="text-secondary mb-4">
+<span class="material-symbols-outlined text-3xl" data-icon="verified">verified</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Certifications</h4>
+<p class="text-sm text-on-surface-variant">Earn Food Safety, Smart Serve, and First Aid industry credentials.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Student Showcase Section -->
+<section class="py-20 bg-white">
+<div class="container max-w-[1200px] mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Student Showcase</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Hear directly from our graduates about how the ELT Hospitality program transformed their careers in Canada.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Success Story 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 shadow-md bg-zinc-200">
+<img alt="Graduate success story" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv30FodY00TgPeNB8VYSS_UPqVFJscVr7X9WfJN_ZGz_bZ0a0XR6VgDYCflrHvg4sgLSbwwhqIZ4RwUuBbg1VafVjgf9d61CFAIdvpekG4IyoWSm80qaObTuJ8R5w4fzE4ag2JbHrkpToBUajtZtu8UFaKENxEsqkkcLtGywpburNXUqE9BdYER7UsHY5FlckuqM0XPbjmsuL9giKQzk1JaRQLa-jeXxLzBVgq2qsM80aYcAfPK-UEUOuHYZEkljUNRBLvC-aoVw"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+<div class="w-16 h-16 bg-primary/90 text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl fill-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<p class="font-bold text-on-surface mb-1">Class of 2024 - Success Story</p>
+<p class="text-sm text-on-surface-variant">Transition to Front Desk Management</p>
+</div>
+<!-- Success Story 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 shadow-md bg-zinc-200">
+<img alt="Graduate success story" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk_rg3f8jPNMG08rNNQVUs-XFS1MZCAovI8D8Lxi3aLGLqg8s3cBagBqUDSHQ3DJyyRF3QNPXtzuzItXdYcOC-A2NZWGQp-gc4Nmn8oqNwZVkFRpdspnqQ1wsbYGi9rKoxuR7PyxkuYnh5kxg7kyMe5fB4656eSGaVM2cUy78h-XZEX3gEYLYstE59meDpOpICw2KsyIdK7ca4UxcRzMstCcYJJEtyj8Dv4Y1GAtrCuS64476Fb5UAOzn9o-36TtxpxMvQxNq2Aw"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+<div class="w-16 h-16 bg-primary/90 text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl fill-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<p class="font-bold text-on-surface mb-1">Class of 2023 - Career Journey</p>
+<p class="text-sm text-on-surface-variant">From Student to Sous Chef</p>
+</div>
+<!-- Success Story 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 shadow-md bg-zinc-200">
+<img alt="Graduate success story" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKan2Ng9uwQp2ilhAVP6UJb4BRlQqB9Hgan0Y-0Joa_jZXt76SAJfUNDNuuyvbEgxLRSsOjFCEXhF5Keo9JUWFin9aOLNE55smcSw0P2X75aYTc4qb4Gk6xIj-f5qc6ARIAKSzoibVVnPS2wQQAHGdpm1K0YPQGdkci8JUMlkJHQIM3OJMsP95x22R8SwHEMq2U7d_qJn-oeme5PH983IPkwSk06jcHrLqa-Fnf1c2gnSAtxb4SASV42Yvjp_-YMos2-8Aatuqng"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+<div class="w-16 h-16 bg-primary/90 text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl fill-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<p class="font-bold text-on-surface mb-1">Class of 2024 - Success Story</p>
+<p class="text-sm text-on-surface-variant">Hospitality English Excellence</p>
+</div>
+<!-- Success Story 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 shadow-md bg-zinc-200">
+<img alt="Graduate success story" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnr0xKqPz5QlfvlWRZeL4nl2X8b2qzUZSp6wjCXtvWQBGhr30EvhfRtdCmzsP_FrfQHnlmEoExJljU-EjZBvbXZI8o7aH37cxSdEa21WcaI8vmni8aLWv6sdaozO-EgFc8PR1rdI0gL6D159kx3Sbokqi56FUTZ0ANEXFAVEy7CqfTkd4MHpwAHsE4MF6F12YOu9JhvigQKfKBzcyHqq_bra7k4kNzTSCsOb-5T77twUd0UvHGH3f2PBWmsC7NktYDTiSKxgXAZQ"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+<div class="w-16 h-16 bg-primary/90 text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl fill-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<p class="font-bold text-on-surface mb-1">Class of 2022 - Success Story</p>
+<p class="text-sm text-on-surface-variant">Tourism Professional Pathway</p>
+</div>
+<!-- Success Story 5 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 shadow-md bg-zinc-200">
+<img alt="Graduate success story" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqTu869caXnSkxT4ccZYtJMDwLvxM6jq4SWszaJXC8GzZf3C60rLRupmjnUqCeXgwJmD_hPLkYD07dGtK0iXmqh5hf-rQz7m7uXd-_c209i7FTTnyrzhvct7-7rOiYJw-29CFemcrICqDMBiL7zS43_tuFZnd5q09PAfDewvjvnkuvFyBuo_p_6rocZ22XCXlOHD6S9KMyW37Mjao8FOAqOEWuZ87nAl3jPe-2qkWph-Wx2GyWSInjCmjsBXVZ5HLMjB6HLxLihA"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+<div class="w-16 h-16 bg-primary/90 text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl fill-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<p class="font-bold text-on-surface mb-1">Class of 2024 - Success Story</p>
+<p class="text-sm text-on-surface-variant">Global Skills, Local Opportunity</p>
+</div>
+<!-- Success Story 6 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-xl overflow-hidden mb-4 shadow-md bg-zinc-200">
+<img alt="Graduate success story" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT95jH19CrAYET-szaFXecndsd7_YmSuGduDGF65aywxGBCNTdIYPIaoARzjY0kMp0bdAEShe0xmIjucuN1bN9vgEeJ_k2dPE0UQs5PN3euB8H8eA7dZL6rywfeXv9sclRz7X9VBStq7I9eoKoLT-vREr8pPAjKIHqnnarO6P-ngSc_MBVERa9oGJbx4p0wLtA2TQCf4mJZWjLJ2IiT9XKztLs40B9aEdJlUAjZAggJtaZJbNFnEkE1UbkZrAAL1lp2MGRbSeeow"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+<div class="w-16 h-16 bg-primary/90 text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl fill-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<p class="font-bold text-on-surface mb-1">Class of 2023 - Success Story</p>
+<p class="text-sm text-on-surface-variant">Building Community in PEI</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 bg-white border-y border-zinc-100">
+<div class="container max-w-[1200px] mx-auto px-6 text-center">
+<h2 class="font-headline-md text-headline-md mb-4">Ready to start your journey?</h2>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                    Interviews are now being scheduled for the 2026 intake. Meet with our instructors and find out if ELT Hospitality is the right fit for you.
+                </p>
+<div class="flex justify-center items-center gap-6">
+<div class="hidden sm:block h-[1px] w-12 bg-outline-variant"></div>
+<button class="bg-primary text-white font-bold px-12 py-5 rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95">
+                        Book Your Interview
+                    </button>
+<div class="hidden sm:block h-[1px] w-12 bg-outline-variant"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-100 dark:bg-zinc-900 full-width bottom-0 mt-16 border-t border-zinc-200 dark:border-zinc-800">
+<div class="max-w-[1200px] mx-auto px-6 pt-16 pb-8">
+<!-- Top Footer Section with 3 Columns -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-left">
+<!-- Contact Us -->
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-primary dark:text-red-500 uppercase tracking-wider font-['Public_Sans'] text-lg">Contact Us</h4>
+<div class="text-zinc-600 dark:text-zinc-400 font-['Lexend'] space-y-1">
+<p>34 Belmont Street</p>
+<p>Charlottetown, PE C1A 5H1</p>
+<p>Phone: (902) 628-7014</p>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-primary dark:text-red-500 uppercase tracking-wider font-['Public_Sans'] text-lg">Quick Links</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#991322] dark:hover:text-red-400 transition-all font-['Lexend']" href="#">About Program</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#991322] dark:hover:text-red-400 transition-all font-['Lexend']" href="#">Curriculum</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#991322] dark:hover:text-red-400 transition-all font-['Lexend']" href="#">How to Apply</a>
+</nav>
+</div>
+<!-- Connect With Us -->
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-primary dark:text-red-500 uppercase tracking-wider font-['Public_Sans'] text-lg">Connect With Us</h4>
+<div class="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 font-['Lexend']">
+<a class="hover:text-[#991322] dark:hover:text-red-400 transition-all" href="#">Follow us on Facebook</a>
+</div>
+</div>
+</div>
+<!-- Bottom Footer Section (Brand + Copyright) -->
+<div class="pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-center md:justify-start gap-4 mb-2">
+<span class="font-bold text-[#991322] font-headline-md uppercase tracking-wider">Holland College</span>
+<!-- Placeholder for IRCC Logo if available, or just text representation -->
+<span class="text-xs text-zinc-400 border-l border-zinc-300 pl-4 uppercase font-bold tracking-widest">IRCC Funded</span>
+</div>
+<p class="font-['Public_Sans'] text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">© 2024 Holland College ELT Hospitality Program.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-[#991322] dark:hover:text-red-400 underline transition-all font-['Public_Sans'] text-sm" href="#">Privacy Policy</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-[#991322] dark:hover:text-red-400 underline transition-all font-['Public_Sans'] text-sm" href="#">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Mobile Nav Bar (Shared Component Rule) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-zinc-200 z-50 flex justify-around items-center py-3 px-2 shadow-2xl">
+<a class="flex flex-col items-center gap-1 text-[#991322] font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] uppercase font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-zinc-500" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="text-[10px] uppercase font-medium">Details</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-zinc-500" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="text-[10px] uppercase font-medium">Apply</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-zinc-500" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="text-[10px] uppercase font-medium">Contact</span>
+</a>
+</nav>
+</body></html>

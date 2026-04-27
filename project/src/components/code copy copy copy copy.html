@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;family=Lexend:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f3f3f3",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "outline-variant": "#e1bebd",
+                    "surface-container-highest": "#e2e2e2",
+                    "secondary-container": "#fd7274",
+                    "primary-container": "#991322",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#730013",
+                    "primary-fixed": "#ffdad8",
+                    "background": "#f9f9f9",
+                    "primary-fixed-dim": "#ffb3b0",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-tertiary-container": "#c0bebd",
+                    "on-secondary-fixed-variant": "#891b25",
+                    "surface-variant": "#e2e2e2",
+                    "inverse-primary": "#ffb3b0",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#dadada",
+                    "on-secondary-container": "#6f0416",
+                    "tertiary-fixed": "#e4e2e1",
+                    "on-surface-variant": "#594140",
+                    "on-primary-fixed": "#410006",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "outline": "#8d706f",
+                    "inverse-surface": "#2f3131",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container": "#eeeeee",
+                    "surface": "#f9f9f9",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary": "#363636",
+                    "on-surface": "#1a1c1c",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#900a1d",
+                    "on-background": "#1a1c1c",
+                    "tertiary-container": "#4d4d4d",
+                    "secondary": "#a9343b",
+                    "on-secondary-fixed": "#410008",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#b22831",
+                    "secondary-fixed-dim": "#ffb3b1",
+                    "secondary-fixed": "#ffdad8",
+                    "on-primary-container": "#ffa6a3",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "container-max": "1200px",
+                    "stack-lg": "48px",
+                    "gutter": "24px",
+                    "stack-sm": "12px",
+                    "unit": "8px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Lexend"],
+                    "headline-lg": ["Public Sans"],
+                    "body-md": ["Lexend"],
+                    "label-caps": ["Public Sans"],
+                    "headline-md": ["Public Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-card {
+            background: #ffffff;
+            border: 1px solid #e2e2e2;
+            transition: all 0.2s ease-in-out;
+        }
+        .bento-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-color: #991322;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopAppBar Section -->
+<header class="bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#991322] dark:text-red-500" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="text-xl font-bold text-[#991322] tracking-tight">ELT Hospitality</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Public_Sans'] text-base font-semibold">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#991322] transition-colors duration-200" href="#">Home</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#991322] transition-colors duration-200" href="#">Program Details</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#991322] transition-colors duration-200" href="#">Certifications</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-[#991322] transition-colors duration-200" href="#">Student Journey</a>
+<a class="text-[#991322] border-b-2 border-[#991322] pb-1 transition-colors duration-200" href="#">Contact</a>
+</nav>
+<button class="bg-[#991322] text-white px-6 py-2 rounded-lg font-semibold scale-95 active:opacity-80 transition-all">
+                Contact
+            </button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-12">
+<!-- Hero Title -->
+<div class="mb-stack-lg">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2">Connect With Us</h1>
+<p class="font-body-lg text-body-lg text-tertiary max-w-2xl">Begin your journey in the Canadian hospitality sector. Our coordinators are here to support your registration and career goals.</p>
+</div>
+<!-- Asymmetric Grid Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Coordinator & Booking -->
+<div class="lg:col-span-7 space-y-gutter">
+<!-- Coordinator Info Card -->
+<div class="bento-card p-stack-md rounded-xl flex flex-col md:flex-row gap-stack-md items-start">
+<img class="w-32 h-32 rounded-full object-cover border-2 border-primary-container" data-alt="Professional portrait of a friendly female academic coordinator in a modern office setting, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdA08Ji7UDs2KkkPh3T_A-Bplf6Utu9GaiMxweysdq8FuAalb_1KQmjv4CShYSY-uLUdjhDQ7RmUQ-z_QpgCEYOYYvFTKla5CBrTiWXN8g2BXQ4Ik8p8xSOfW-kZNG8-c32c3VYR4ysrFGhk2-Znw1Zc0N06flJ_pK2kuULelGUHBVv1_zzevDKeXV4cFqN956zPjSxqchVsQo334sh3V1ea3EfGGREH37KyGLLBXE-ANpU_DhsG4aTVsjx3L2t4W1RgRWZ62kTw"/>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Program Coordinator</h2>
+<p class="font-body-lg text-body-lg text-primary font-semibold mb-2">Sarah Thompson, M.Ed.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Dedicated to helping newcomers bridge the gap between international experience and Canadian hospitality standards.</p>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">mail</span>
+<span class="text-sm">s.thompson@hollandcollege.com</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-xl">call</span>
+<span class="text-sm">+1 (902) 555-0123</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interview Booking Form -->
+<div class="bento-card p-stack-md rounded-xl">
+<h3 class="font-headline-md text-headline-md mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+                        Book Your Intake Interview
+                    </h3>
+<form class="space-y-stack-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-sm">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Full Name</label>
+<input class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary focus:outline-none transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Email Address</label>
+<input class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary focus:outline-none transition-all" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-sm">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">English Level (CLB)</label>
+<select class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary focus:outline-none transition-all">
+<option>CLB 5</option>
+<option>CLB 6</option>
+<option>CLB 7</option>
+<option>CLB 8+</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Preferred Date</label>
+<input class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary focus:outline-none transition-all" type="date"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface uppercase">Message / Questions</label>
+<textarea class="w-full p-3 bg-surface border border-outline-variant rounded-lg font-body-md focus:ring-2 focus:ring-primary focus:outline-none transition-all" placeholder="Tell us about your background in hospitality..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps py-4 rounded-lg hover:bg-primary-container transition-colors shadow-sm uppercase tracking-widest" type="submit">
+                            Request Interview Time
+                        </button>
+</form>
+</div>
+</div>
+<!-- Right Column: Location & Support -->
+<div class="lg:col-span-5 space-y-gutter">
+<!-- Map Section -->
+<div class="bento-card rounded-xl overflow-hidden h-[400px] relative">
+<img class="w-full h-full object-cover" data-alt="Detailed map view of Charlottetown, Prince Edward Island showing the Holland College campus location and surrounding streets" data-location="Charlottetown, PE, Canada" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH5VMKlK4a0pcBqkNUxvemzsH0ZiEWPYzyh0XRmIGNuupRgGTzH4hNeWdkGDvlLeWM22DJu8LBBVLkXV-6tIVAY417eyZ5GcHLrwRIlvuV8LBwnIi2g3o5O3z2hOp-mU3l2_HQ7MQoTy_m3xJm2GHzsX5HQAYUygDtKYwDYWjm9-PklCm9IPvonrenQy2VoYTRyjO8J8BXSa_GdIFab_8jfsVHQdN8UEpwT_utmx3L7iyraq7v5VHt_cz_ABdSl4wWsvLpK1rWxg"/>
+<div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur p-4 rounded shadow-lg border border-outline-variant">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-bold text-on-surface">Tourism &amp; Culinary Centre</p>
+<p class="text-sm text-on-surface-variant">4 Sydney St, Charlottetown, PE C1A 1E9</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Registration Support Card -->
+<div class="bg-primary text-on-primary p-stack-md rounded-xl relative overflow-hidden">
+<!-- Subtle background pattern decorative -->
+<div class="absolute top-0 right-0 opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">help_center</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md mb-2">Need help with IRCC?</h4>
+<p class="font-body-md mb-6 opacity-90">Our team can guide you through the funded seat eligibility requirements and necessary documentation for permanent residents.</p>
+<div class="flex flex-col gap-3">
+<a class="flex items-center justify-between bg-white/10 hover:bg-white/20 p-3 rounded transition-colors group" href="#">
+<span class="font-semibold">Check Eligibility</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="flex items-center justify-between bg-white/10 hover:bg-white/20 p-3 rounded transition-colors group" href="#">
+<span class="font-semibold">Document Checklist</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">download</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Section -->
+<footer class="bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-300 dark:border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 py-12 max-w-7xl mx-auto font-['Public_Sans'] text-sm leading-relaxed">
+<!-- Branding & Funding -->
+<div class="space-y-4">
+<div class="text-lg font-bold text-zinc-900 dark:text-white uppercase tracking-tighter">ELT Hospitality</div>
+<p class="text-zinc-600 dark:text-zinc-400 max-w-xs">
+                    An English Language Training initiative bridging communication and vocational skills for Canada's growing hospitality sector.
+                </p>
+<div class="flex items-center gap-2 pt-2">
+<div class="w-8 h-8 bg-zinc-300 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-zinc-600">verified</span>
+</div>
+<span class="text-xs text-zinc-500 font-medium">Funded by IRCC</span>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="space-y-4">
+<h5 class="text-zinc-900 dark:text-white font-bold uppercase tracking-widest text-xs">Navigation</h5>
+<ul class="space-y-2">
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:underline hover:text-[#991322] transition-opacity opacity-90 hover:opacity-100" href="#">About Program</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:underline hover:text-[#991322] transition-opacity opacity-90 hover:opacity-100" href="#">Curriculum</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:underline hover:text-[#991322] transition-opacity opacity-90 hover:opacity-100" href="#">How to Apply</a></li>
+<li><a class="text-zinc-600 dark:text-zinc-400 hover:underline hover:text-[#991322] transition-opacity opacity-90 hover:opacity-100" href="#">Facebook</a></li>
+</ul>
+</div>
+<!-- Contact/Legal -->
+<div class="space-y-4">
+<h5 class="text-zinc-900 dark:text-white font-bold uppercase tracking-widest text-xs">Contact</h5>
+<p class="text-zinc-600 dark:text-zinc-400">
+                    Holland College Tourism Center<br/>
+                    Charlottetown, PEI, Canada
+                </p>
+<p class="text-zinc-600 dark:text-zinc-400 pt-4">
+                    © Holland College. Funded by IRCC.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#991322] cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-[#991322] cursor-pointer">alternate_email</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
