@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { GraduationCap, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '../../image/logo.jpg';
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -27,23 +28,26 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white border-b border-zinc-200 transition-shadow duration-200 ${
+      className={`sticky top-0 z-50 border-b border-zinc-200/80 bg-white/95 backdrop-blur transition-all duration-200 ${
         scrolled ? 'shadow-md' : 'shadow-sm'
       }`}
     >
-      <div className="max-w-container mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-container mx-auto h-20 px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
-            <GraduationCap className="w-5 h-5 text-white" />
-          </div>
-          <span className="font-display text-xl font-bold text-primary uppercase tracking-wide">
+        <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group">
+          <img
+            src={logo}
+            alt="ELT Hospitality"
+            className="h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+          />
+          <span className="hidden sm:inline font-display text-lg lg:text-xl font-bold text-primary uppercase tracking-wide">
             ELT Hospitality
           </span>
+          <span className="sr-only">ELT Hospitality</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50/70 p-1">
           {navLinks.map((link) => {
             const active =
               link.to === '/'
@@ -53,10 +57,11 @@ export default function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`font-display text-[14px] font-semibold tracking-wide uppercase transition-colors duration-150 pb-0.5 ${
+                aria-current={active ? 'page' : undefined}
+                className={`rounded-full px-3.5 py-2 font-display text-[13px] font-semibold tracking-wide uppercase transition-all duration-150 ${
                   active
-                    ? 'text-primary border-b-2 border-primary'
-                    : 'text-zinc-600 hover:text-primary border-b-2 border-transparent'
+                    ? 'bg-white text-primary shadow-sm ring-1 ring-zinc-200'
+                    : 'text-zinc-600 hover:bg-white hover:text-primary'
                 }`}
               >
                 {link.label}
@@ -68,14 +73,14 @@ export default function Navbar() {
         {/* CTA */}
         <Link
           to="/contact"
-          className="hidden md:inline-flex items-center bg-primary text-white px-6 py-2.5 rounded-lg font-display font-bold text-sm uppercase tracking-wide hover:bg-primary-container active:scale-95 transition-all duration-150 shadow-sm"
+          className="hidden md:inline-flex items-center rounded-full bg-primary text-white px-5 py-2.5 font-display text-sm font-bold uppercase tracking-wide shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:bg-primary-container hover:shadow-md active:translate-y-0"
         >
           Apply Now
         </Link>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 rounded-lg text-zinc-600 hover:bg-zinc-100 transition-colors"
+          className="md:hidden rounded-lg border border-zinc-200 p-2 text-zinc-600 transition-colors hover:bg-zinc-100"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -85,7 +90,8 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-zinc-100 px-6 pb-4 pt-2 flex flex-col gap-1">
+        <div className="md:hidden border-t border-zinc-100 bg-white px-4 pb-4 pt-3 shadow-sm sm:px-6">
+          <div className="flex flex-col gap-1 rounded-2xl border border-zinc-100 bg-zinc-50/60 p-2">
           {navLinks.map((link) => {
             const active =
               link.to === '/'
@@ -95,10 +101,11 @@ export default function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`py-2.5 px-3 rounded-lg font-display text-sm font-semibold uppercase tracking-wide transition-colors ${
+                aria-current={active ? 'page' : undefined}
+                className={`rounded-xl px-3 py-2.5 font-display text-sm font-semibold uppercase tracking-wide transition-colors ${
                   active
                     ? 'bg-primary/10 text-primary'
-                    : 'text-zinc-700 hover:bg-zinc-50'
+                    : 'text-zinc-700 hover:bg-white'
                 }`}
               >
                 {link.label}
@@ -107,10 +114,11 @@ export default function Navbar() {
           })}
           <Link
             to="/contact"
-            className="mt-2 text-center bg-primary text-white py-3 rounded-lg font-display font-bold text-sm uppercase tracking-wide hover:bg-primary-container transition-all"
+            className="mt-2 rounded-xl bg-primary py-3 text-center font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-primary-container"
           >
             Apply Now
           </Link>
+          </div>
         </div>
       )}
     </header>

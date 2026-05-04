@@ -6,40 +6,33 @@ import {
   ChefHat,
   Hotel,
   Award,
-  PlayCircle,
   ArrowRight,
 } from 'lucide-react';
 
 const showcaseItems = [
   {
-    image: 'https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&w=800',
-    title: 'Class of 2024 - Success Story',
-    subtitle: 'Transition to Front Desk Management',
+    title: 'ELT Hospitality Class 2025-2026',
+    videoUrl: 'https://www.youtube.com/embed/lry1icD6YWo',
   },
   {
-    image: 'https://images.pexels.com/photos/2544829/pexels-photo-2544829.jpeg?auto=compress&cs=tinysrgb&w=800',
-    title: 'Class of 2023 - Career Journey',
-    subtitle: 'From Student to Sous Chef',
+    title: 'ELT Hospitality Class 2024-2025',
+    videoUrl: 'https://www.youtube.com/embed/z2ElA5Ycsvk',
   },
   {
-    image: 'https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=800',
-    title: 'Class of 2024 - Success Story',
-    subtitle: 'Hospitality English Excellence',
+    title: 'ELT Hospitality Class 2023-2024',
+    videoUrl: 'https://www.youtube.com/embed/WWOB4zQ_tcE',
   },
   {
-    image: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800',
-    title: 'Class of 2022 - Success Story',
-    subtitle: 'Tourism Professional Pathway',
+    title: 'ELT Hospitality Class 2022-2023',
+    videoUrl: 'https://www.youtube.com/embed/4bV1N2JAVbM',
   },
   {
-    image: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800',
-    title: 'Class of 2024 - Success Story',
-    subtitle: 'Global Skills, Local Opportunity',
+    title: 'ELT Hospitality Class 2021-2022',
+    videoUrl: 'https://www.youtube.com/embed/IcXw_If0MvU',
   },
   {
-    image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
-    title: 'Class of 2023 - Success Story',
-    subtitle: 'Building Community in PEI',
+    title: 'ELT Hospitality Class 2020-2021',
+    videoUrl: 'https://www.youtube.com/embed/GsuaEmLeOPA',
   },
 ];
 
@@ -192,21 +185,19 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {showcaseItems.map((item, i) => (
-              <div key={i} className="group cursor-pointer">
-                <div className="relative aspect-video rounded-xl overflow-hidden mb-4 shadow-md bg-zinc-200">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              <div key={i} className="rounded-xl border border-zinc-200 p-3 shadow-sm">
+                <div className="relative aspect-video overflow-hidden rounded-lg bg-zinc-200">
+                  <iframe
+                    src={item.videoUrl}
+                    title={item.title}
+                    className="h-full w-full"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
                   />
-                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors duration-300">
-                    <div className="w-14 h-14 bg-primary/90 text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                      <PlayCircle className="w-7 h-7 fill-white" />
-                    </div>
-                  </div>
                 </div>
-                <p className="font-display font-bold text-on-surface mb-1">{item.title}</p>
-                <p className="text-sm text-on-surface-variant">{item.subtitle}</p>
+                <p className="mt-3 font-display font-bold text-on-surface">{item.title}</p>
               </div>
             ))}
           </div>

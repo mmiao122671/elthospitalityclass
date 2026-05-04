@@ -13,7 +13,7 @@ const modules = [
   {
     icon: ShoppingBag,
     title: 'Customer Service',
-    image: 'https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/image/Customer Service.jpg',
     description:
       'Practice your interaction skills at the New-to-You Shop, learning point-of-sale systems and Canadian retail etiquette.',
     link: 'Explore Retail Module',
@@ -21,7 +21,7 @@ const modules = [
   {
     icon: ChefHat,
     title: 'Culinary Arts',
-    image: 'https://images.pexels.com/photos/2544829/pexels-photo-2544829.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/image/Culinary Arts.jpg',
     description:
       'Master cooking and serving through our School Lunch Program. Gain real commercial kitchen experience every day.',
     link: 'Explore Kitchen Module',
@@ -29,7 +29,7 @@ const modules = [
   {
     icon: PartyPopper,
     title: 'Event Planning',
-    image: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/image/Event Planning.jpg',
     description:
       'From the Winter Carnival to our Haunted House, learn the logistics and magic of hosting large community events.',
     link: 'Explore Events Module',
@@ -37,7 +37,7 @@ const modules = [
   {
     icon: MapPin,
     title: 'Tourism Knowledge',
-    image: 'https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/image/Tourism Knowledge.jpg',
     description:
       'Become an island expert with PEI-specific training and educational bus tours across the province.',
     link: 'Explore Tourism Module',

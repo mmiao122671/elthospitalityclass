@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { GraduationCap, MapPin, Phone, Facebook } from 'lucide-react';
+import { MapPin, Phone, Facebook } from 'lucide-react';
+import logo from '../../image/logo.jpg';
 
 const quickLinks = [
   { label: 'About Program', to: '/program' },
@@ -17,10 +18,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <GraduationCap className="w-4 h-4 text-white" />
-              </div>
+            <Link to="/" className="flex items-center gap-3 group">
+              <img
+                src={logo}
+                alt="ELT Hospitality"
+                className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+              />
               <span className="font-display font-bold text-primary uppercase tracking-wide text-lg">
                 ELT Hospitality
               </span>
@@ -78,7 +81,9 @@ export default function Footer() {
             </nav>
             <div className="pt-2 flex items-center gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=100052566775944"
+                target="_blank"
+                rel="noreferrer"
                 className="flex items-center gap-2 text-sm text-zinc-600 hover:text-primary transition-colors"
                 aria-label="Follow us on Facebook"
               >
@@ -90,7 +95,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* <div className="pt-8 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4">
             <span className="font-display font-bold text-primary uppercase tracking-wider text-sm">
               Holland College
@@ -109,7 +114,7 @@ export default function Footer() {
               Contact
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

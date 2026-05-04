@@ -185,7 +185,7 @@ export default function Certifications() {
             <div className="lg:col-span-5 hidden lg:block">
               <div className="rounded-2xl overflow-hidden shadow-xl h-[400px]">
                 <img
-                  src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="image/Holland College Advantage.jpg"
                   alt="Students collaborating on campus"
                   className="w-full h-full object-cover"
                 />
@@ -207,13 +207,14 @@ export default function Certifications() {
               admissions team to verify your CLB level eligibility.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link
-                to="/contact"
+              <a
+                href="/files/program.pdf"
+                download="ELT-Hospitality-Program.pdf"
                 className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-display font-bold text-sm uppercase tracking-wide hover:bg-primary-container active:scale-95 transition-all h-14"
               >
                 <Download className="w-4 h-4" />
                 Download Program PDF
-              </Link>
+              </a>
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center bg-zinc-800 text-white px-8 py-4 rounded-xl font-display font-bold text-sm uppercase tracking-wide hover:bg-zinc-900 active:scale-95 transition-all h-14"

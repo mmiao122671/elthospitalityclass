@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Phone, Mail, ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, AlertTriangle, CheckCircle } from 'lucide-react';
 
 type FormData = {
   fullName: string;
@@ -63,8 +63,8 @@ export default function Contact() {
               {/* Coordinator card */}
               <div className="bg-white rounded-2xl border border-zinc-200 shadow-sm p-6 flex flex-col sm:flex-row gap-6 items-start">
                 <img
-                  src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=300"
-                  alt="Program Coordinator"
+                  src="/image/Beverley.jpg"
+                  alt="Beverley Fullerton Lewis, Program Coordinator"
                   className="w-28 h-28 rounded-full object-cover border-4 border-surface-container-low flex-shrink-0"
                 />
                 <div>
@@ -235,12 +235,15 @@ export default function Contact() {
 
             {/* Right: location + support */}
             <div className="lg:col-span-5 flex flex-col gap-6">
-              {/* Map placeholder */}
+              {/* Live Google map */}
               <div className="bg-white rounded-2xl border border-zinc-200 shadow-sm overflow-hidden h-[360px] relative">
-                <img
-                  src="https://images.pexels.com/photos/1004409/pexels-photo-1004409.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Charlottetown, Prince Edward Island"
-                  className="w-full h-full object-cover"
+                <iframe
+                  title="Holland College Belmont Centre Map"
+                  src="https://www.google.com/maps?q=34+Belmont+Street,+Charlottetown,+PE+C1A+5H1&output=embed"
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
                 />
                 <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-outline-variant">
                   <div className="flex items-start gap-3">
@@ -252,13 +255,21 @@ export default function Contact() {
                       <p className="text-xs text-on-surface-variant mt-0.5">
                         Room 217, 34 Belmont Street, Charlottetown, PE C1A 5H1
                       </p>
+                      <a
+                        href="https://www.google.com/maps/dir/?api=1&destination=34+Belmont+Street,+Charlottetown,+PE+C1A+5H1"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-block mt-2 text-xs font-semibold text-primary hover:underline"
+                      >
+                        Open in Google Maps
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* IRCC Support card */}
-              <div className="bg-primary text-white p-8 rounded-2xl relative overflow-hidden">
+              {/* <div className="bg-primary text-white p-8 rounded-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 opacity-10">
                   <AlertTriangle className="w-32 h-32 m-4" />
                 </div>
@@ -284,7 +295,7 @@ export default function Contact() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Quick contact info */}
               <div className="bg-white rounded-2xl border border-zinc-200 shadow-sm p-6 space-y-4">
