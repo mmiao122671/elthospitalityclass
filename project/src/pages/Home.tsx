@@ -144,18 +144,18 @@ export default function Home() {
               <div className="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center mb-4">
                 <ChefHat className="w-5 h-5 text-primary" />
               </div>
-              <h4 className="font-display font-bold text-lg mb-2 text-on-surface">Culinary Excellence</h4>
+              <h4 className="font-display font-bold text-lg mb-2 text-on-surface">Culinary Essentials</h4>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Master back-of-house operations in professional commercial kitchens.
+              Practice food preparation and kitchen safety through the School Lunch Program partnership.
               </p>
             </div>
             <div className="md:col-span-4 bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm hover:shadow-md transition-shadow group">
               <div className="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center mb-4">
                 <Hotel className="w-5 h-5 text-primary" />
               </div>
-              <h4 className="font-display font-bold text-lg mb-2 text-on-surface">Hotel Management</h4>
+              <h4 className="font-display font-bold text-lg mb-2 text-on-surface">Tourism & Guest Services</h4>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Front desk operations, guest services, and tourism fundamentals.
+              Build professional skills in front desk operations, local tourism knowledge, and guest relations.
               </p>
             </div>
             <div className="md:col-span-4 bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm hover:shadow-md transition-shadow group">
