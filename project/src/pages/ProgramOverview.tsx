@@ -15,32 +15,32 @@ const modules = [
     title: 'Customer Service',
     image: '/image/Customer Service.jpg',
     description:
-      'Practice your interaction skills at the New-to-You Shop, learning point-of-sale systems and Canadian retail etiquette.',
-    link: 'Explore Retail Module',
+      'Develop essential interpersonal skills and learn the fundamentals of Canadian workplace culture through hands-on practice at the New-to-You Shop.',
+    // link: 'Explore Retail Module',
   },
   {
     icon: ChefHat,
     title: 'Culinary Arts',
     image: '/image/Culinary Arts.jpg',
     description:
-      'Master cooking and serving through our School Lunch Program. Gain real commercial kitchen experience every day.',
-    link: 'Explore Kitchen Module',
+      'Practice cooking and serving through our School Lunch Program. Gain hands-on experience in a collaborative environment while supporting the local community.',
+    
   },
   {
     icon: PartyPopper,
     title: 'Event Planning',
     image: '/image/Event Planning.jpg',
     description:
-      'From the Winter Carnival to our Haunted House, learn the logistics and magic of hosting large community events.',
-    link: 'Explore Events Module',
+      'Discover the excitement of hosting large-scale events. From planning the Winter Carnival to managing the Haunted House, gain experience in creating memorable guest experiences',
+    
   },
   {
     icon: MapPin,
     title: 'Tourism Knowledge',
     image: '/image/Tourism Knowledge.jpg',
     description:
-      'Become an island expert with PEI-specific training and educational bus tours across the province.',
-    link: 'Explore Tourism Module',
+      'Gain a professional understanding of the local tourism industry through educational bus tours and regional orientations. Build knowledge of local tourism through first-hand experiences.',
+    // link: 'Explore Tourism Module',
   },
 ];
 
@@ -130,10 +130,10 @@ export default function ProgramOverview() {
                       <p className="text-sm text-zinc-600 leading-relaxed mb-4">
                         {mod.description}
                       </p>
-                      <span className="text-primary font-display text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-150">
+                      {/* <span className="text-primary font-display text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-150">
                         {mod.link}
                         <ArrowRight className="w-4 h-4" />
-                      </span>
+                      </span> */}
                     </div>
                   </div>
                 );

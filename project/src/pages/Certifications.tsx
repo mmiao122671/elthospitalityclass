@@ -49,10 +49,10 @@ const certs = [
 ];
 
 const pathwayPrograms = [
-  'Accounting Programs',
-  'Business Administration',
-  'Tourism & Travel',
-  'Culinary Management',
+  // 'Accounting Programs',
+  // 'Business Administration',
+  // 'Tourism & Travel',
+  // 'Culinary Management',
 ];
 
 export default function Certifications() {
@@ -154,16 +154,15 @@ export default function Certifications() {
                     </h4>
                     <p className="text-base text-on-surface-variant leading-relaxed">
                       Successful completion of ELT Hospitality provides full
-                      transfer credit for PROF 1005, a required course for
-                      Business and Accounting diplomas.
+                      transfer credit for PROF 1005.
                     </p>
                   </div>
-                  <div className="flex-shrink-0 bg-surface-container px-6 py-5 rounded-xl text-center min-w-[120px]">
+                  {/* <div className="flex-shrink-0 bg-surface-container px-6 py-5 rounded-xl text-center min-w-[120px]">
                     <span className="block font-bold text-2xl text-primary">Save $450+</span>
                     <span className="text-xs text-on-surface-variant uppercase font-semibold tracking-wide">
                       Tuition Value
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 

@@ -188,56 +188,7 @@ export default function StudentJourney() {
       </section>
 
       {/* Timeline / Roadmap */}
-      <section className="py-16 bg-surface">
-        <div className="max-w-container mx-auto px-6">
-          <h2 className="font-display text-[28px] font-semibold text-on-background mb-10">
-            Program Roadmap
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {phases.map((p) => {
-              const Icon = p.icon;
-              return (
-                <div
-                  key={p.phase}
-                  className={`relative p-8 rounded-2xl overflow-hidden flex flex-col h-full shadow-sm hover:shadow-md transition-shadow ${
-                    p.highlight
-                      ? 'bg-primary-container text-white border-2 border-primary shadow-lg'
-                      : 'bg-white border border-zinc-200'
-                  }`}
-                >
-                  {/* Decorative bg icon */}
-                  <div className={`absolute top-0 right-0 p-4 ${p.highlight ? 'opacity-20' : 'opacity-8'}`}>
-                    <Icon className={`w-16 h-16 ${p.highlight ? 'text-white' : 'text-primary'}`} />
-                  </div>
-
-                  <div className={`mb-3 text-xs font-display font-bold uppercase tracking-widest ${p.highlight ? 'text-white/70' : 'text-primary'}`}>
-                    {p.phase}
-                  </div>
-                  <h3 className={`font-display text-xl font-semibold mb-3 ${p.highlight ? 'text-white' : 'text-on-surface'}`}>
-                    {p.title}
-                  </h3>
-                  <p className={`text-sm leading-relaxed mb-6 flex-grow ${p.highlight ? 'text-white/80' : 'text-tertiary'}`}>
-                    {p.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {p.items.map((item) => (
-                      <li key={item} className="flex items-center gap-2">
-                        <CheckCircle className={`w-4 h-4 flex-shrink-0 ${p.highlight ? 'text-white/70' : 'text-green-600'}`} />
-                        <span className={`text-sm font-medium ${p.highlight ? 'text-white' : 'text-on-surface'}`}>
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className={`mt-6 pt-4 border-t ${p.highlight ? 'border-white/20 text-white/60' : 'border-zinc-100 text-zinc-400'} text-xs font-display font-bold uppercase tracking-widest`}>
-                    {p.dates}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+   
 
       {/* Success Stories */}
       <section className="py-20">

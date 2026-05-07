@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Languages,
@@ -8,6 +9,16 @@ import {
   Award,
   ArrowRight,
 } from 'lucide-react';
+
+const heroBackgroundSlides = [
+  '/image/1.jpg',
+  '/image/2.jpg',
+  '/image/3.jpg',
+  '/image/4.jpg',
+  '/image/5.jpg',
+] as const;
+
+const SLIDE_INTERVAL_MS = 6000;
 
 const showcaseItems = [
   {
@@ -37,20 +48,58 @@ const showcaseItems = [
 ];
 
 export default function Home() {
+  const [heroSlide, setHeroSlide] = useState(0);
+  const [expandedShowcaseIndex, setExpandedShowcaseIndex] = useState<
+    number | null
+  >(null);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setHeroSlide((i) => (i + 1) % heroBackgroundSlides.length);
+    }, SLIDE_INTERVAL_MS);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const toggleShowcase = (index: number) => {
+    setExpandedShowcaseIndex((prev) => (prev === index ? null : index));
+  };
+
+  useEffect(() => {
+    if (expandedShowcaseIndex === null) return;
+    const onEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setExpandedShowcaseIndex(null);
+    };
+    window.addEventListener('keydown', onEscape);
+    return () => window.removeEventListener('keydown', onEscape);
+  }, [expandedShowcaseIndex]);
+
+  useEffect(() => {
+    if (expandedShowcaseIndex === null) return;
+    const el = document.getElementById(
+      `showcase-card-${expandedShowcaseIndex}`,
+    );
+    el?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, [expandedShowcaseIndex]);
+
   return (
     <div className="bg-background text-on-surface">
       {/* Hero */}
       <section className="relative min-h-[620px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Hotel reception with friendly staff"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/92 to-white/10" />
+        <div className="absolute inset-0 z-0" aria-hidden>
+          {heroBackgroundSlides.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt=""
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ease-in-out ${
+                i === heroSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white via-white/92 to-white/15" />
         </div>
-        <div className="max-w-container mx-auto px-6 relative z-10 py-20">
-          <div className="max-w-2xl">
+        <div className="relative z-10 mx-auto max-w-container px-6 py-20">
+          <div className="max-w-2xl [text-shadow:0_1px_2px_rgba(255,255,255,0.85)]">
             <span className="inline-block bg-primary-container text-white font-display text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
               Holland College — IRCC Funded
             </span>
@@ -103,7 +152,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-display font-bold text-on-primary-fixed-variant text-base">CLB 5–8</p>
-                    <p className="text-sm text-on-surface-variant">English Proficiency</p>
+                   
                   </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl border border-outline-variant/40">
@@ -112,7 +161,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-display font-bold text-on-primary-fixed-variant text-base">Permanent Resident</p>
-                    <p className="text-sm text-on-surface-variant">Or Protected Person Status</p>
+                    
                   </div>
                 </div>
               </div>
@@ -183,23 +232,61 @@ export default function Home() {
               program transformed their careers in Canada.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {showcaseItems.map((item, i) => (
-              <div key={i} className="rounded-xl border border-zinc-200 p-3 shadow-sm">
-                <div className="relative aspect-video overflow-hidden rounded-lg bg-zinc-200">
-                  <iframe
-                    src={item.videoUrl}
-                    title={item.title}
-                    className="h-full w-full"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                </div>
-                <p className="mt-3 font-display font-bold text-on-surface">{item.title}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            {showcaseItems
+              .map((item, i) => ({ item, i }))
+              .sort((a, b) => {
+                if (expandedShowcaseIndex === a.i) return -1;
+                if (expandedShowcaseIndex === b.i) return 1;
+                return a.i - b.i;
+              })
+              .map(({ item, i }) => {
+                const expanded = expandedShowcaseIndex === i;
+                const othersExpanded =
+                  expandedShowcaseIndex !== null && !expanded;
+                return (
+                  <div
+                    key={i}
+                    id={`showcase-card-${i}`}
+                    className={`rounded-xl border border-zinc-200 p-3 shadow-sm transition-all duration-300 ease-out ${
+                      expanded
+                        ? 'col-span-full order-first z-[1] ring-2 ring-primary shadow-xl sm:p-5'
+                        : ''
+                    } ${othersExpanded ? 'opacity-75' : ''}`}
+                  >
+                    <div
+                      id={`showcase-video-${i}`}
+                      className={`relative w-full overflow-hidden rounded-lg bg-zinc-200 aspect-video transition-[box-shadow] duration-300 ${
+                        expanded ? 'shadow-lg ring-1 ring-black/10' : ''
+                      }`}
+                    >
+                      <iframe
+                        src={item.videoUrl}
+                        title={item.title}
+                        className="absolute inset-0 h-full w-full"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => toggleShowcase(i)}
+                      className="mt-3 w-full text-left font-display font-bold text-on-surface transition-colors hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded"
+                      aria-expanded={expanded}
+                      aria-controls={`showcase-video-${i}`}
+                    >
+                      {item.title}
+                      <span className="mt-0.5 block text-xs font-normal text-on-surface-variant">
+                        {expanded
+                          ? 'Click again to shrink, or press Esc'
+                          : 'Click title for full-width video'}
+                      </span>
+                    </button>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </section>

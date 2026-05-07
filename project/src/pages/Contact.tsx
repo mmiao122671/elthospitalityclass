@@ -1,40 +1,6 @@
-import { useState } from 'react';
-import { MapPin, Phone, Mail, AlertTriangle, CheckCircle } from 'lucide-react';
-
-type FormData = {
-  fullName: string;
-  email: string;
-  phone: string;
-  clbLevel: string;
-  preferredDate: string;
-  message: string;
-};
-
-const initialForm: FormData = {
-  fullName: '',
-  email: '',
-  phone: '',
-  clbLevel: 'CLB 5',
-  preferredDate: '',
-  message: '',
-};
+import { MapPin, Phone, Mail, AlertTriangle } from 'lucide-react';
 
 export default function Contact() {
-  const [form, setForm] = useState<FormData>(initialForm);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setForm(initialForm);
-  };
-
   return (
     <div className="bg-background text-on-surface">
       {/* Page header */}
@@ -69,7 +35,7 @@ export default function Contact() {
                 />
                 <div>
                   <h2 className="font-display text-[22px] font-semibold text-on-surface mb-0.5">
-                    Program Coordinator
+                    Program Instructor
                   </h2>
                   <p className="font-display font-bold text-primary text-base mb-3">
                     Beverley Fullerton Lewis
@@ -81,11 +47,11 @@ export default function Contact() {
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <a
-                      href="mailto:b.fullertonlewis@hollandcollege.com"
+                      href="mailto:bfullertonlewis@hollandcollege.com"
                       className="flex items-center gap-2 text-sm text-on-surface hover:text-primary transition-colors"
                     >
                       <Mail className="w-4 h-4 text-primary" />
-                      <span>b.fullertonlewis@hollandcollege.com</span>
+                      <span>bfullertonlewis@hollandcollege.com</span>
                     </a>
                     <a
                       href="tel:+19026287014"
@@ -124,27 +90,14 @@ export default function Contact() {
                   Book Your Intake Interview
                 </h3>
 
-                {submitted ? (
-                  <div className="flex flex-col items-center py-12 gap-4 text-center">
-                    <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-                      <CheckCircle className="w-8 h-8 text-green-600" />
-                    </div>
-                    <h4 className="font-display font-bold text-xl text-on-surface">
-                      Request Submitted!
-                    </h4>
-                    <p className="text-on-surface-variant max-w-sm">
-                      Thank you for your interest. Our team will contact you
-                      within 2 business days to schedule your interview.
-                    </p>
-                    <button
-                      onClick={() => setSubmitted(false)}
-                      className="mt-2 text-primary font-display font-semibold text-sm underline hover:no-underline"
-                    >
-                      Submit another request
-                    </button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                <form
+                  action="https://formsubmit.co/mmiaopei@gmail.com"
+                  method="POST"
+                  className="space-y-5"
+                >
+                  <input type="hidden" name="_subject" value="New Contact Form Submission" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="false" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
                         <label className="block font-display text-xs font-bold uppercase tracking-widest text-on-surface">
@@ -154,8 +107,6 @@ export default function Contact() {
                           required
                           type="text"
                           name="fullName"
-                          value={form.fullName}
-                          onChange={handleChange}
                           placeholder="Your full name"
                           className="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary focus:outline-none transition-all"
                         />
@@ -168,8 +119,6 @@ export default function Contact() {
                           required
                           type="email"
                           name="email"
-                          value={form.email}
-                          onChange={handleChange}
                           placeholder="your@email.com"
                           className="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary focus:outline-none transition-all"
                         />
@@ -178,14 +127,25 @@ export default function Contact() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
+                      <label className="block font-display text-xs font-bold uppercase tracking-widest text-on-surface">
+                        Phone Number *
+                      </label>
+                      <input
+                        required
+                        type="tel"
+                        name="phone"
+                        placeholder="(902) 555-1234"
+                        className="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                      />
+                    </div>
+                    <div className="space-y-1.5">
                         <label className="block font-display text-xs font-bold uppercase tracking-widest text-on-surface">
                           English Level (CLB) *
                         </label>
                         <select
                           required
                           name="clbLevel"
-                          value={form.clbLevel}
-                          onChange={handleChange}
+                        defaultValue="CLB 5"
                           className="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary focus:outline-none transition-all"
                         >
                           <option>CLB 5</option>
@@ -201,8 +161,6 @@ export default function Contact() {
                         <input
                           type="date"
                           name="preferredDate"
-                          value={form.preferredDate}
-                          onChange={handleChange}
                           className="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary focus:outline-none transition-all"
                         />
                       </div>
@@ -215,8 +173,6 @@ export default function Contact() {
                       <textarea
                         rows={4}
                         name="message"
-                        value={form.message}
-                        onChange={handleChange}
                         placeholder="Tell us about your background in hospitality..."
                         className="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl text-sm focus:ring-2 focus:ring-primary focus:outline-none transition-all resize-none"
                       />
@@ -229,7 +185,6 @@ export default function Contact() {
                       Request Interview Time
                     </button>
                   </form>
-                )}
               </div>
             </div>
 
@@ -317,8 +272,8 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                  <a href="mailto:b.fullertonlewis@hollandcollege.com" className="text-on-surface-variant hover:text-primary transition-colors break-all">
-                    b.fullertonlewis@hollandcollege.com
+                  <a href="mailto:bfullertonlewis@hollandcollege.com" className="text-on-surface-variant hover:text-primary transition-colors break-all">
+                    bfullertonlewis@hollandcollege.com
                   </a>
                 </div>
               </div>
