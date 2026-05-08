@@ -4,7 +4,7 @@ import logo from '../../image/logo.jpg';
 
 const quickLinks = [
   { label: 'About Program', to: '/program' },
-  { label: 'Curriculum', to: '/program' },
+  // { label: 'Curriculum', to: '/program' },
   { label: 'Certifications', to: '/certifications' },
   { label: 'Student Journey', to: '/journey' },
   { label: 'How to Apply', to: '/contact' },
