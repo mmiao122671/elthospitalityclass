@@ -103,7 +103,7 @@ export default function Contact() {
                 </h3>
 
                 <form
-                  action="https://formsubmit.co/mmiaopei@gmail.com"
+                  action="https://formsubmit.co/bfullertonlewis@hollandcollege.com"
                   method="POST"
                   className="space-y-5"
                 >
