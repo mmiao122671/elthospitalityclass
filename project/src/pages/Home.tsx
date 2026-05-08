@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import {
   Languages,
   CreditCard,
@@ -11,11 +12,26 @@ import {
 } from 'lucide-react';
 
 const heroBackgroundSlides = [
-  '/image/1.jpg',
-  '/image/2.jpg',
-  '/image/3.jpg',
-  '/image/4.jpg',
-  '/image/5.jpg',
+  {
+    src: '/image/1.jpg',
+    alt: 'Students practicing hospitality service skills in class',
+  },
+  {
+    src: '/image/2.jpg',
+    alt: 'Hospitality trainees working in a professional kitchen environment',
+  },
+  {
+    src: '/image/3.jpg',
+    alt: 'ELT learners collaborating during hospitality training',
+  },
+  {
+    src: '/image/4.jpg',
+    alt: 'Hospitality class participants developing customer service skills',
+  },
+  {
+    src: '/image/5.jpg',
+    alt: 'Graduates and instructors in ELT hospitality training program',
+  },
 ] as const;
 
 const SLIDE_INTERVAL_MS = 6000;
@@ -83,14 +99,25 @@ export default function Home() {
 
   return (
     <div className="bg-background text-on-surface">
+      <Helmet>
+        <title>ELT & Hospitality Class | Professional Training Services</title>
+        <meta
+          name="description"
+          content="Professional ELT and Hospitality classes in Charlottetown. Join our training programs to boost your career in the hospitality industry."
+        />
+        <meta
+          name="keywords"
+          content="ELT, Hospitality Class, Hospitality Training, Charlottetown"
+        />
+      </Helmet>
       {/* Hero */}
       <section className="relative min-h-[620px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0" aria-hidden>
-          {heroBackgroundSlides.map((src, i) => (
+          {heroBackgroundSlides.map((slide, i) => (
             <img
-              key={src}
-              src={src}
-              alt=""
+              key={slide.src}
+              src={slide.src}
+              alt={slide.alt}
               className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ease-in-out ${
                 i === heroSlide ? 'opacity-100' : 'opacity-0'
               }`}
@@ -104,7 +131,7 @@ export default function Home() {
               Holland College — IRCC Funded
             </span>
             <h1 className="font-display text-[clamp(32px,5vw,52px)] font-bold leading-[1.15] tracking-tight text-primary mb-6">
-              Launch Your Hospitality Career in Prince Edward Island
+              Your Gateway to ELT and Hospitality Excellence
             </h1>
             <p className="text-lg text-on-surface-variant leading-relaxed mb-8 max-w-lg">
               Bridge the gap between your international background and the

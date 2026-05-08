@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import {
   Handshake,
   CheckCircle,
@@ -6,7 +7,6 @@ import {
   ChefHat,
   PartyPopper,
   MapPin,
-  ArrowRight,
 } from 'lucide-react';
 
 const modules = [
@@ -47,6 +47,17 @@ const modules = [
 export default function ProgramOverview() {
   return (
     <div className="bg-background text-on-surface">
+      <Helmet>
+        <title>Hospitality Curriculum | ELT & Hospitality Class</title>
+        <meta
+          name="description"
+          content="Explore the ELT and Hospitality curriculum in Charlottetown, including customer service, culinary arts, event planning, and tourism training."
+        />
+        <meta
+          name="keywords"
+          content="Hospitality Curriculum, ELT Training, Culinary Arts, Event Planning, Charlottetown"
+        />
+      </Helmet>
       {/* Page Hero */}
       <section className="relative min-h-[380px] flex items-center overflow-hidden bg-primary-container">
         <img
@@ -73,6 +84,9 @@ export default function ProgramOverview() {
       {/* The Experience + Module Grid */}
       <section className="py-20">
         <div className="max-w-container mx-auto px-6">
+          <h2 className="font-display text-[28px] font-semibold text-on-surface mb-6">
+            Our Hospitality Curriculum
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Experience card */}
             <div className="md:col-span-4 bg-white p-8 rounded-2xl border border-zinc-200 shadow-sm flex flex-col justify-between">

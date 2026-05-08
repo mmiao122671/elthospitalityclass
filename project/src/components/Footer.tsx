@@ -21,7 +21,7 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-3 group">
               <img
                 src={logo}
-                alt="ELT Hospitality"
+                alt="ELT and Hospitality Class program logo"
                 className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
               />
               <span className="font-display font-bold text-primary uppercase tracking-wide text-lg">

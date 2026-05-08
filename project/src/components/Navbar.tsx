@@ -37,7 +37,7 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group">
           <img
             src={logo}
-            alt="ELT Hospitality"
+            alt="ELT and Hospitality Class logo"
             className="h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
           />
           <span className="hidden sm:inline font-display text-lg lg:text-xl font-bold text-primary uppercase tracking-wide">

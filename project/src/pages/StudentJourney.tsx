@@ -1,56 +1,6 @@
 import { Link } from 'react-router-dom';
-import {
-  BookOpen,
-  Sparkles,
-  Briefcase,
-  Trophy,
-  CheckCircle,
-  AlertTriangle,
-  Quote,
-} from 'lucide-react';
-
-const phases = [
-  {
-    phase: 'Phase 1',
-    title: 'Fall Semester',
-    dates: 'September – November',
-    description:
-      'Focus on Language & Essentials. Build your foundation in hospitality terminology and Canadian workplace culture.',
-    items: ['Workplace English', 'Hospitality Basics', 'Canadian Culture Orientation'],
-    icon: BookOpen,
-    highlight: false,
-  },
-  {
-    phase: 'Phase 2',
-    title: 'Winter Semester',
-    dates: 'December – February',
-    description:
-      'Events & Shop. Hands-on training in event management and retail operations at college facilities.',
-    items: ['Event Planning', 'Customer Service', 'Winter Carnival Project'],
-    icon: Sparkles,
-    highlight: false,
-  },
-  {
-    phase: 'Phase 3',
-    title: 'Spring Semester',
-    dates: 'March – May',
-    description:
-      'Job Shadow & Final Certs. Transition into industry placements to observe professionals in action.',
-    items: ['Industry Placements', 'Food Safety Certification', 'First Aid / CPR Training'],
-    icon: Briefcase,
-    highlight: false,
-  },
-  {
-    phase: 'Phase 4',
-    title: 'Graduation',
-    dates: 'June',
-    description:
-      'Celebration of completion and launch into your professional hospitality career in PEI.',
-    items: ['Convocation Ceremony', 'Job Ready Portfolio', 'Industry Connections'],
-    icon: Trophy,
-    highlight: true,
-  },
-];
+import { Helmet } from 'react-helmet-async';
+import { AlertTriangle, Quote } from 'lucide-react';
 
 const stories = [
   {
@@ -136,6 +86,17 @@ const stories = [
 export default function StudentJourney() {
   return (
     <div className="bg-background text-on-surface">
+      <Helmet>
+        <title>Student Journey & Success Stories | ELT Hospitality</title>
+        <meta
+          name="description"
+          content="Read ELT Hospitality student journey stories and career outcomes from graduates working in hospitality roles across Prince Edward Island."
+        />
+        <meta
+          name="keywords"
+          content="Student Journey, ELT Success Stories, Hospitality Careers, PEI, Charlottetown"
+        />
+      </Helmet>
       {/* Page Hero */}
       <section className="py-20">
         <div className="max-w-container mx-auto px-6">
