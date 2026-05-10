@@ -143,7 +143,7 @@ export default function Home() {
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-display font-bold text-base uppercase tracking-wide shadow-lg hover:bg-primary-container active:scale-95 transition-all duration-150"
               >
-                Book Your Interview
+                Book Your Interview Now
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
@@ -335,7 +335,7 @@ export default function Home() {
               to="/contact"
               className="bg-primary text-white font-display font-bold px-12 py-5 rounded-full shadow-lg hover:shadow-xl hover:bg-primary-container active:scale-95 transition-all duration-150 uppercase tracking-wide"
             >
-              Book Your Interview
+              Book Your Interview Now
             </Link>
             <div className="hidden sm:block h-px w-16 bg-outline-variant" />
           </div>
