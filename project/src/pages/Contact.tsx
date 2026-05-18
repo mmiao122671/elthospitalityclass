@@ -1,7 +1,64 @@
-import { MapPin, Phone, Mail, AlertTriangle } from 'lucide-react';
+import { useState, type FormEvent } from 'react';
+import { MapPin, Phone, Mail, AlertTriangle, CheckCircle } from 'lucide-react';
 import SEO from '../components/SEO';
+import {
+  WEB3FORMS_ACCESS_KEY,
+  WEB3FORMS_ENDPOINT,
+} from '../config/web3forms';
+
+type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 export default function Contact() {
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitStatus('submitting');
+    setErrorMessage('');
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      botcheck: '',
+      subject: 'New ELT Hospitality Intake Interview Request',
+      name: data.get('fullName'),
+      email: data.get('email'),
+      phone: data.get('phone'),
+      clbLevel: data.get('clbLevel'),
+      preferredDate: data.get('preferredDate') || 'Not specified',
+      message: data.get('message') || 'No message provided',
+    };
+
+    try {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = (await response.json()) as { success?: boolean; message?: string };
+
+      if (response.ok && result.success) {
+        setSubmitStatus('success');
+        form.reset();
+        return;
+      }
+
+      setSubmitStatus('error');
+      setErrorMessage(
+        result.message ?? 'Something went wrong. Please try again or email us directly.',
+      );
+    } catch {
+      setSubmitStatus('error');
+      setErrorMessage(
+        'Unable to send your request. Check your connection or contact us by email.',
+      );
+    }
+  };
+
   return (
     <div className="bg-background text-on-surface">
       <SEO
@@ -97,14 +154,37 @@ export default function Contact() {
                   Book Your Intake Interview
                 </h3>
 
+                {submitStatus === 'success' ? (
+                  <div className="rounded-xl border border-primary/20 bg-primary-fixed/30 p-6 text-center">
+                    <CheckCircle className="mx-auto mb-3 h-10 w-10 text-primary" />
+                    <p className="font-display text-lg font-semibold text-on-surface">
+                      Request sent successfully
+                    </p>
+                    <p className="mt-2 text-sm text-on-surface-variant">
+                      Thank you. Our team will contact you soon to schedule your
+                      intake interview.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitStatus('idle')}
+                      className="mt-4 text-sm font-semibold text-primary hover:underline"
+                    >
+                      Send another request
+                    </button>
+                  </div>
+                ) : null}
+
                 <form
-                  action="https://formsubmit.co/mmiao@upei.ca"
-                  method="POST"
-                  className="space-y-5"
+                  onSubmit={handleSubmit}
+                  className={`space-y-5 ${submitStatus === 'success' ? 'hidden' : ''}`}
                 >
-                  <input type="hidden" name="_subject" value="New Contact Form Submission" />
-                  <input type="hidden" name="_template" value="table" />
-                  <input type="hidden" name="_captcha" value="false" />
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
                         <label className="block font-display text-xs font-bold uppercase tracking-widest text-on-surface">
@@ -185,11 +265,20 @@ export default function Contact() {
                       />
                     </div>
 
+                    {submitStatus === 'error' ? (
+                      <p className="text-sm text-error" role="alert">
+                        {errorMessage}
+                      </p>
+                    ) : null}
+
                     <button
                       type="submit"
-                      className="w-full bg-primary text-white py-4 rounded-xl font-display font-bold text-sm uppercase tracking-widest hover:bg-primary-container active:scale-[0.98] transition-all shadow-sm"
+                      disabled={submitStatus === 'submitting'}
+                      className="w-full bg-primary text-white py-4 rounded-xl font-display font-bold text-sm uppercase tracking-widest hover:bg-primary-container active:scale-[0.98] transition-all shadow-sm disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Request Interview Time
+                      {submitStatus === 'submitting'
+                        ? 'Sending…'
+                        : 'Request Interview Time'}
                     </button>
                   </form>
               </div>
