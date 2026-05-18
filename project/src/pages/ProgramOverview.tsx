@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import {
   Handshake,
   CheckCircle,
@@ -47,17 +47,12 @@ const modules = [
 export default function ProgramOverview() {
   return (
     <div className="bg-background text-on-surface">
-      <Helmet>
-        <title>Hospitality Curriculum | ELT & Hospitality Class</title>
-        <meta
-          name="description"
-          content="Explore the ELT and Hospitality curriculum in Charlottetown, including customer service, culinary arts, event planning, and tourism training."
-        />
-        <meta
-          name="keywords"
-          content="Hospitality Curriculum, ELT Training, Culinary Arts, Event Planning, Charlottetown"
-        />
-      </Helmet>
+      <SEO
+        title="Hospitality Curriculum | ELT & Hospitality Class"
+        description="Explore the ELT and Hospitality curriculum in Charlottetown, including customer service, culinary arts, event planning, and tourism training."
+        keywords="Hospitality Curriculum, ELT Training, Culinary Arts, Event Planning, Charlottetown"
+        path="/program"
+      />
       {/* Page Hero */}
       <section className="relative min-h-[380px] flex items-center overflow-hidden bg-primary-container">
         <img

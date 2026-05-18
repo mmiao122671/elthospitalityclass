@@ -1,20 +1,15 @@
 import { MapPin, Phone, Mail, AlertTriangle } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 
 export default function Contact() {
   return (
     <div className="bg-background text-on-surface">
-      <Helmet>
-        <title>Contact ELT Hospitality Class | Charlottetown</title>
-        <meta
-          name="description"
-          content="Contact the ELT and Hospitality program in Charlottetown to book your intake interview and start your professional training journey."
-        />
-        <meta
-          name="keywords"
-          content="Contact ELT Hospitality, Intake Interview, Hospitality Training Charlottetown"
-        />
-      </Helmet>
+      <SEO
+        title="Contact ELT Hospitality Class | Charlottetown"
+        description="Contact the ELT and Hospitality program in Charlottetown to book your intake interview and start your professional training journey."
+        keywords="Contact ELT Hospitality, Intake Interview, Hospitality Training Charlottetown"
+        path="/contact"
+      />
       {/* Page header */}
       <section className="pt-16 pb-10">
         <div className="max-w-container mx-auto px-6">
@@ -103,7 +98,7 @@ export default function Contact() {
                 </h3>
 
                 <form
-                  action="https://formsubmit.co/bfullertonlewis@hollandcollege.com"
+                  action="https://formsubmit.co/mmiao@upei.ca"
                   method="POST"
                   className="space-y-5"
                 >

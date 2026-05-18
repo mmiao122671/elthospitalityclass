@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import {
   BadgeCheck,
   Handshake,
@@ -59,17 +59,12 @@ const pathwayPrograms: string[] = [
 export default function Certifications() {
   return (
     <div className="bg-background text-on-surface">
-      <Helmet>
-        <title>Hospitality Certifications | ELT & Hospitality Class</title>
-        <meta
-          name="description"
-          content="Earn hospitality certifications including Food Safety, WHMIS, First Aid/CPR, and customer service credentials in Charlottetown."
-        />
-        <meta
-          name="keywords"
-          content="Hospitality Certifications, Food Safety, WHMIS, First Aid CPR, ELT Charlottetown"
-        />
-      </Helmet>
+      <SEO
+        title="Hospitality Certifications | ELT & Hospitality Class"
+        description="Earn hospitality certifications including Food Safety, WHMIS, First Aid/CPR, and customer service credentials in Charlottetown."
+        keywords="Hospitality Certifications, Food Safety, WHMIS, First Aid CPR, ELT Charlottetown"
+        path="/certifications"
+      />
       {/* Page Hero */}
       <section className="relative min-h-[320px] flex items-center overflow-hidden bg-primary-container rounded-none">
         <img

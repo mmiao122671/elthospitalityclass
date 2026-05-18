@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { AlertTriangle, Quote } from 'lucide-react';
 
 const stories = [
@@ -86,17 +86,12 @@ const stories = [
 export default function StudentJourney() {
   return (
     <div className="bg-background text-on-surface">
-      <Helmet>
-        <title>Student Journey & Success Stories | ELT Hospitality</title>
-        <meta
-          name="description"
-          content="Read ELT Hospitality student journey stories and career outcomes from graduates working in hospitality roles across Prince Edward Island."
-        />
-        <meta
-          name="keywords"
-          content="Student Journey, ELT Success Stories, Hospitality Careers, PEI, Charlottetown"
-        />
-      </Helmet>
+      <SEO
+        title="Student Journey & Success Stories | ELT Hospitality"
+        description="Read ELT Hospitality student journey stories and career outcomes from graduates working in hospitality roles across Prince Edward Island."
+        keywords="Student Journey, ELT Success Stories, Hospitality Careers, PEI, Charlottetown"
+        path="/journey"
+      />
       {/* Page Hero */}
       <section className="py-20">
         <div className="max-w-container mx-auto px-6">

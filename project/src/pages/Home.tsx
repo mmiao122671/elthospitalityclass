@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import {
   Languages,
   CreditCard,
@@ -99,17 +99,12 @@ export default function Home() {
 
   return (
     <div className="bg-background text-on-surface">
-      <Helmet>
-        <title>ELT & Hospitality Class | Professional Training Services</title>
-        <meta
-          name="description"
-          content="Professional ELT and Hospitality classes in Charlottetown. Join our training programs to boost your career in the hospitality industry."
-        />
-        <meta
-          name="keywords"
-          content="ELT, Hospitality Class, Hospitality Training, Charlottetown"
-        />
-      </Helmet>
+      <SEO
+        title="ELT & Hospitality Class | Professional Training Services"
+        description="Professional ELT and Hospitality classes in Charlottetown. Join our training programs to boost your career in the hospitality industry."
+        keywords="ELT, Hospitality Class, Hospitality Training, Charlottetown"
+        path="/"
+      />
       {/* Hero */}
       <section className="relative min-h-[620px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0" aria-hidden>

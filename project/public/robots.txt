@@ -1,0 +1,5 @@
+# https://elthospitalityclass.com/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://elthospitalityclass.com/sitemap.xml
