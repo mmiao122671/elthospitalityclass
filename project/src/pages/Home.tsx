@@ -330,7 +330,7 @@ export default function Home() {
               to="/contact"
               className="bg-primary text-white font-display font-bold px-12 py-5 rounded-full shadow-lg hover:shadow-xl hover:bg-primary-container active:scale-95 transition-all duration-150 uppercase tracking-wide"
             >
-              Book Your Interview Now
+              Book Your Interview 
             </Link>
             <div className="hidden sm:block h-px w-16 bg-outline-variant" />
           </div>
