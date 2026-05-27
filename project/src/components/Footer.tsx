@@ -29,8 +29,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-zinc-600 text-sm leading-relaxed max-w-xs">
-              An English Language Training initiative bridging communication
-              and vocational skills for Canada's growing hospitality sector.
+            Employment Language Training
             </p>
             <span className="inline-flex items-center gap-2 text-xs text-zinc-500 font-semibold uppercase tracking-widest">
               <span className="w-5 h-5 bg-primary rounded-full flex items-center justify-center">

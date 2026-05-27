@@ -235,7 +235,7 @@ export default function Home() {
               </div>
               <h4 className="font-display font-bold text-lg mb-2 text-on-surface">Certifications</h4>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                Earn Food Safety, Smart Serve, and First Aid industry credentials.
+              Earn Food Safety, CPR/First Aid, WHMIS, PEI Best Service Excellence, Emerit Workplace Essentials and Occupational Health and Safety certifications.
               </p>
             </div>
           </div>
