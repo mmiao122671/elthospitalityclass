@@ -81,6 +81,19 @@ const stories = [
       "I am a Turkish Canadian. I could not speak English when I came to Canada. After joining some English classes, I enrolled in the Hospitality Class. This was not just an English class, it was much more than that, and it added a lot to my life. Every day, I learned so many things about the tourism sector while improving my English skills, such as reading, writing, speaking, and listening.\n\nBesides, I learned about Canadian workplace culture and rules, how to write emails, cover letters, and resumes. I also earned many certifications that helped me in my job later, such as Food Safety, First Aid, and WHMIS. Many professionals from various institutions in PEI came and gave informative presentations. I even had the chance to do job shadowing at a pharmacy as a pharmacy assistant.\n\nI got to visit many places across our island and even had the opportunity to be a tour guide - it was an amazing experience. Our class consisted of very friendly people, and I made many friends.\n\nThe most important thing is that Beverley is a great instructor. She put in a lot of effort for us every day from September to June. She is so helpful that she still supports us even after the class.\n\nI found out about this class by chance, and it was a great opportunity for me to be a part of it. When I told my friends living in different parts of Canada about this program, I learned that there is not a class like this in other provinces. We are so lucky.",
     quote: 'Thank you so much, Beverley, for everything.',
   },
+  {
+    name: 'Kholoud',
+    role: 'Front-End Team Member',
+    image: '/image/Kholoud.jpg',
+    story:
+      'The ELT Hospitality Program helped me improve my English communication skills, build confidence, and prepare for employment in Canada. The support and guidance I received gave me the tools I needed to succeed in a customer service role.\n\nToday, I am proud to work on the Front-End Team at Atlantic Superstore in Charlottetown. I enjoy helping customers and creating a positive shopping experience every day. I am especially proud to be consistently recognized with the highest number of customer and team Kudos, reflecting my commitment to excellent service and teamwork.\n\nThe ELT Hospitality Program gave me the confidence and skills to achieve my goals and build a successful future in Canada.',
+    quote:
+      'The ELT Hospitality Program helped me turn opportunity into success through confidence, hard work, and dedication.',
+    link: {
+      href: 'https://www.facebook.com/100063807250237/posts/1592663259537234/',
+      label: "Atlantic Superstore's Facebook post",
+    },
+  },
 ];
 
 export default function StudentJourney() {
@@ -169,9 +182,11 @@ export default function StudentJourney() {
                       {story.name}
                     </p>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      <span className="text-[11px] font-display font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-primary/10 text-primary">
-                        {story.classYear}
-                      </span>
+                      {'classYear' in story && story.classYear && (
+                        <span className="text-[11px] font-display font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-primary/10 text-primary">
+                          {story.classYear}
+                        </span>
+                      )}
                       <span className="text-[11px] font-display font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-600">
                         {story.role}
                       </span>
@@ -181,6 +196,16 @@ export default function StudentJourney() {
                 <p className="text-on-surface-variant leading-relaxed whitespace-pre-line text-[15px]">
                   {story.story}
                 </p>
+                {'link' in story && story.link && (
+                  <a
+                    href={story.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-primary text-sm font-medium hover:underline -mt-2"
+                  >
+                    Read {story.link.label} →
+                  </a>
+                )}
                 <div className="pt-4 border-t border-zinc-100">
                   <Quote className="w-6 h-6 text-primary-fixed mb-2" />
                   <p className="text-tertiary italic">
